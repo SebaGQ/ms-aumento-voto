@@ -16,7 +16,7 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@main
         with:
-          java-version: '8'
+          java-version: '17'
           distribution: 'temurin'
           
       - name: Compilar Dependencias Maven 
@@ -27,7 +27,7 @@ jobs:
 
       - name: Analisis Sonar Cloud
         run: |
-          mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.10.0.2594:sonar \
+          mvn clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:3.11.0.3922:sonar \
           -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.organization=sebagq \
