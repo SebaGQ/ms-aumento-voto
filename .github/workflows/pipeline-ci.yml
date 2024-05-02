@@ -34,11 +34,17 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: sebagq/devops-foundation:latest
+      #Se comenta porque daba error, se hará a mano
+      #- name: Build and push
+        #uses: docker/build-push-action@v5
+        #with:
+          #push: true
+          #tags: sebagq/devops-foundation:latest
+          
+      - name: Build and Push
+        run: |
+          docker build -t sebagq/devops-foundation:latest
+          docker push sebagq/devops-foundation:latest
 
 
       #- name: Analisis Sonar Cloud
