@@ -43,7 +43,7 @@ jobs:
           
       - name: Build and Push
         run: |
-          docker build -t sebagq/devops-foundation:latest
+          docker build -t sebagq/devops-foundation:latest .
           docker push sebagq/devops-foundation:latest
 
 
